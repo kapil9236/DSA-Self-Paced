@@ -1,35 +1,31 @@
-//keep track of minimum value so far
-// comapare the differences and update difference and minVal
-
 #include<iostream>
 using namespace std;
 
-int maxDiff(int arr[],int n){
-	int res=arr[1]-arr[0],minVal=arr[0];
-	
-	for(int i=0;i<n;i++){
-		res=max(res,arr[i]-minVal);
-		minVal=min(minVal,arr[i]);
-	}
-	return res;
+void printfreq(int arr[],int n){
+	int freq=1;
+	int i=1;
+	    while(i<n){
+		
+		while(i<n && arr[i]==arr[i-1]){
+			freq++;
+			i++;
+		}
+		cout<<arr[i-1]<<" "<<freq<<endl;
+		i++;
+		freq=1;
 }
-
-
+	if(n==1||arr[n-1]!=arr[n-2])
+	cout<<arr[n-1]<<" "<<"1"<<endl;
+}
 
 int main(){
 	int n;
 	cin>>n;
-	
-
-	
 	int arr[n];
-	for(int i=0; i<n;i++){
+	for(int i=0;i<n;i++){
 		cin>>arr[i];
 	}
-	
-	maxDiff(arr,n);
-	cout<<"maximum difference is "<<maxDiff(arr,n);
-	
+	printfreq(arr,n);
 	
 	return 0;
 }
