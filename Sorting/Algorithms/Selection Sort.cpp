@@ -1,9 +1,8 @@
-// bubble sort algorithm
-// Insertion Sort
+// Selection Sort Algorithm
 #include<iostream>
 using namespace std;
 
-void InsertionSort(int arr[], int n){
+void SelectionSort(int arr[], int n){
 	   int min=0;  //index with minimum value 
 	for(int i=0;i<n;i++){
 		min=i;
@@ -31,7 +30,7 @@ int main(){
 		cin>>arr[i];
 	}
 	
-	InsertionSort(arr,n);
+	SelectionSort(arr,n);
 	
 	for(int i=0;i<n;i++){
 		cout<<arr[i]<<endl;
